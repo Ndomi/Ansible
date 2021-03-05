@@ -6,3 +6,4 @@
         name: "{{ item }}"
       loop:
         - create_repo
+        - install_packages

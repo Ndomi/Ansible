@@ -1,0 +1,21 @@
+---
+# tasks file for install_packages
+- name: Install Packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ apache_pkg }}"
+    - "{{ mod_ssl_pkg }}"
+    - "{{ mariadb_pkg }}"
+    - "{{ server_pkg }}"
+  when: ansible_os_family == "RedHat"
+
+- name: Start services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  loop:
+    - "{{ apache_svc }}"
+    - "{{ mariadb_svc }}"

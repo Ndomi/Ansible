@@ -1,0 +1,9 @@
+---
+# vars file for install_packages
+apache_pkg: httpd
+mod_ssl_pkg: mod_ssl
+mariadb_pkg: mariadb
+server_pkg: mariadb-server
+
+apache_svc: httpd
+mariadb_svc: mariadb
