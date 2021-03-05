@@ -1,0 +1,9 @@
+---
+# tasks file for create_repo
+- name: Add repository
+  yum_repository:
+    name: EPEL
+    description: RHEL8
+    baseurl: "{{ base_url }}"
+    enabled: false
+    gpgcheck: false

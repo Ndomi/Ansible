@@ -1,0 +1,8 @@
+---
+- hosts: dev
+  become: true
+  tasks:
+    - include_role:
+        name: "{{ item }}"
+      loop:
+        - create_repo

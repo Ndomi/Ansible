@@ -1,0 +1,3 @@
+---
+# vars file for create_repo
+base_url: https://dl.federoproject.org/pub/epel/epel-release-latest-8.noarch.rmp
