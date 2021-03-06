@@ -1,0 +1,23 @@
+---
+# tasks file for firewall
+- name: Install Firewalld
+  package:
+    name: "{{ firewall_pkg }}"
+    state: latest
+
+- name: Start firewalld
+  service:
+    name: "{{ firewall_svc }}"
+    state: started
+
+- name: Open and Mariadb Apache port
+  firewalld:
+    zone: public
+    port: "{{ item }}"
+    permanent: true
+    state: enabled
+    immediate: true
+  notify: reload firewall
+  loop:
+    - "{{ apache_port }}"
+    - "{{ mariadb_port }}"

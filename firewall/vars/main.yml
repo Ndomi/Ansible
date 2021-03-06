@@ -1,0 +1,7 @@
+---
+# vars file for firewall
+firewall_pkg: firewalld
+firewall_svc: firewalld
+
+apache_port: 80/tcp
+mariadb_port: 3306/tcp
