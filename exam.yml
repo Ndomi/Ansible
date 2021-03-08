@@ -8,3 +8,4 @@
         - create_repo
         - install_packages
         - firewall
+        - file_copy

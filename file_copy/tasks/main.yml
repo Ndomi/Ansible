@@ -1,0 +1,6 @@
+---
+# tasks file for file_copy
+- name: Copy File
+  copy:
+    src: files/test.txt
+    dest: /root/abc.txt
