@@ -1,4 +1,0 @@
-HOST=/etc/ansible/hosts
-MEMORY = 1 Gig
-BIOS = 20171212
-

@@ -19,3 +19,8 @@
   loop:
     - "{{ apache_svc }}"
     - "{{ mariadb_svc }}"
+
+- name: Edit the Index.html file
+  template:
+    src: templates/debug.j2
+    dest: /var/www/html/index.html
