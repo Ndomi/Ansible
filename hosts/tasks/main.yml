@@ -1,0 +1,7 @@
+---
+# tasks file for hosts
+- name: deploy template
+  template:
+    src: templates/hosts.j2
+    dest: /root/hosts_list.txt
+#  when: inventory_hostname in groups['dev']

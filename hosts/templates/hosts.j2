@@ -1,0 +1,5 @@
+127.0.0.1 localhost.localdomain localhost
+127.0.0.1 localhost4.localdomain4 localhost4
+{% for host in groups['dev'] %}
+{{ ansible_default_ipv4.address }} {{ ansible_fqdn }} {{ ansible_hostname }}
+{% endfor %}
