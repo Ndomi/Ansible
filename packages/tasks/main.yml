@@ -1,0 +1,13 @@
+---
+# tasks file for packages
+- name: Install php and mariadb
+  yum:
+    name:
+      - php
+      - mariadb
+    state: latest
+
+- name: Install Development Tools
+  yum:
+    name: '@Development tools'
+    state: latest
