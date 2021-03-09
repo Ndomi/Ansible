@@ -11,4 +11,5 @@
 #        - file_copy
 #        - packages
 #        - hosts
-        - specs
+#        - specs
+        - issue
