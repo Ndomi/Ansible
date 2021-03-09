@@ -1,2 +1,17 @@
 ---
 # tasks file for cron_syslog
+- name: adding rsyslog restart for dev and qual
+  cron:
+    name: restart rsyslog
+    hour: "15"
+    minute: "0"
+    job: 'systemctl restart rsyslog'
+  when: inventory_hostname in groups['dev']
+
+- name: adding rsyslog restart for prod
+  cron:
+    name: restart rsyslog
+    hour: "23"
+    minute: "0"
+    job: 'systemctl restart rsyslog'
+  when: inventory_hostname in groups['prod']

@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: all
   become: true
   tasks:
     - include_role:
@@ -12,4 +12,5 @@
 #        - packages
 #        - hosts
 #        - specs
-        - issue
+#        - issue
+        - cron_syslog
