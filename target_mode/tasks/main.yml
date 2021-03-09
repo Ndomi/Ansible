@@ -1,0 +1,7 @@
+---
+# tasks file for target_mode
+- name: Change system default target
+  file:
+    src: /lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link

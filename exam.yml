@@ -13,4 +13,5 @@
 #        - hosts
 #        - specs
 #        - issue
-        - cron_syslog
+#        - cron_syslog
+        - target_mode
