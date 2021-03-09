@@ -1,0 +1,20 @@
+HOSTNAME = "{{ ansible_hostname }}"
+HOST FQDN = "{{ ansible_fqdn }}"
+OS Distribution= "{{ ansible_distribution }}"
+OS Family = "{{ ansible_os_family }}"
+BIOS VERSION = "{{ ansible_bios_version }}"
+{% if 'vda' in ansible_devices %}
+VDA Size = "{{ ansible_devices.vda.size }}"
+{% else %}
+VDA Size = NONE
+{% endif %}
+{% if 'vdb' in ansible_devices %}
+VDA Size = "{{ ansible_devices.vdb.size }}"
+{% else %}
+VDB Size = NONE
+{% endif %}
+{% if 'vdc' in ansible_devices %}
+VDA Size = "{{ ansible_devices.vdc.size }}"
+{% else %}
+VDC Size = NONE
+{% endif %}

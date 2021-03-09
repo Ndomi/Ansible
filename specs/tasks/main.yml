@@ -1,0 +1,6 @@
+---
+# tasks file for specs
+- name: deploy hardware template
+  template:
+    src: templates/spec.j2
+    dest: /root/spec.txt

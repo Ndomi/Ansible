@@ -5,9 +5,10 @@
     - include_role:
         name: "{{ item }}"
       loop:
-        - create_repo
-        - install_packages
-        - firewall
-        - file_copy
-        - packages
-        - hosts
+#        - create_repo
+#        - install_packages
+#        - firewall
+#        - file_copy
+#        - packages
+#        - hosts
+        - specs
