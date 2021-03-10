@@ -1,0 +1,7 @@
+---
+# vars file for lvm_creation
+raw_disk: sda
+vg_name: ladybug
+lv_name: bee
+fs: ext4
+mount_point: /mnt/mount_point

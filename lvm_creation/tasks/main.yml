@@ -1,0 +1,46 @@
+---
+# tasks file for lvm_creation
+- name: Install lvm
+  yum:
+    name: lvm2
+    state: present
+
+- name: Create Volume Group for dev
+  lvg:
+    pvs: /dev/sda
+    vg: "{{ vg_name }}"
+  when: inventory_hostname in groups['dev']
+
+- name: Create LVM
+  lvol:
+    vg: "{{ vg_name }}"
+    lv: "{{ lv_name }}"
+    size: 50m
+    force: yes
+  when: inventory_hostname in groups['dev']
+
+- name: Create ext4 filesystem on "/dev/{{ vg_name }}/{{ lv_name }}"
+  filesystem:
+    fstype: '{{ fs }}'
+    dev: '/dev/mapper/{{ vg_name }}-{{ lv_name }}'
+  when: inventory_hostname in groups['dev']
+
+- name: Create a directory to mount the filesystem
+  file:
+    path: '{{ mount_point }}'
+    state: directory
+    mode: '0755'
+  when: inventory_hostname in groups['dev']
+
+- lineinfile:
+    path: /etc/fstab
+    line: '/dev/mapper/ladybug-bee  {{ mount_point }} ext4  defaults 0 0'
+  when: inventory_hostname in groups['dev']
+
+- name: Mount all Drives
+  mount:
+    path: '{{ mount_point }}'
+    src: '/dev/mapper/{{ vg_name }}-{{ lv_name }}'
+    fstype: '{{ fs }}'
+    state: mounted
+  when: inventory_hostname in groups['dev']
