@@ -5,13 +5,13 @@
     - include_role:
         name: "{{ item }}"
       loop:
-#        - create_repo
-#        - install_packages
-#        - firewall
-#        - file_copy
-#        - packages
-#        - hosts
-#        - specs
+        - create_repo
+        - install_packages
+        - firewall
+        - file_copy
+        - packages
+        - hosts
+        - specs
 #        - issue
 #        - cron_syslog
 #        - target_mode
